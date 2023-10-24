@@ -23,7 +23,7 @@ export class TableroComponent {
   }
 
   getPlayer = () => {
-    return this.turnoDeX ? 'X' : 'O';
+    return this.turnoDeX ? 'O' : 'X';
   }
 
   jugarTurno = (id: number) => {
@@ -47,7 +47,7 @@ export class TableroComponent {
     ]
           
     for (const [i, value] of lineas.entries()){
-      const [a, b, c] = this.casillas[i];
+      const [a, b, c] = lineas[i];
       if (
         this.casillas[a] &&
         this.casillas[a] === this.casillas[b] &&

@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-casilla',
-  templateUrl: './casilla.component.html',
+  template: `
+    <button>{{ valor }}</button>
+  `,
   styleUrls: ['./casilla.component.scss']
 })
 export class CasillaComponent {
+
+  @Input() valor: 'X' | 'O' | null;
 
 }

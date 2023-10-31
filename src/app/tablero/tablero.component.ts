@@ -23,7 +23,7 @@ export class TableroComponent {
   }
 
   getPlayer = () => {
-    return this.turnoDeX ? 'O' : 'X';
+    return this.turnoDeX ? 'X' : 'O';
   }
 
   jugarTurno = (id: number) => {
@@ -39,24 +39,24 @@ export class TableroComponent {
       [0,1,2],
       [3,4,5],
       [6,7,8],
-      [0,2,6],
+      [0,3,6],
       [1,4,7],
       [2,5,8],
       [0,4,8],
-      [2,4,8]
+      [2,4,6]
     ]
-          
-    for (const [i, value] of lineas.entries()){
-      const [a, b, c] = lineas[i];
+    let ganador;  
+    lineas.map((value) => {
+      const [a, b, c] = value
       if (
         this.casillas[a] &&
         this.casillas[a] === this.casillas[b] &&
         this.casillas[a] === this.casillas[c]
       ) {
-        return this.casillas[a]
+        ganador = this.casillas[a]
       }
-      return null
-    }
+    })
+    return ganador
   }
 
 }

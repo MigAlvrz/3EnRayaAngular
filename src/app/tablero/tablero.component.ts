@@ -9,6 +9,7 @@ export class TableroComponent {
   casillas: any[]
   turnoDeX: boolean;
   ganador: string;
+  isGame: boolean;
 
   constructor() {}
 
@@ -20,6 +21,7 @@ export class TableroComponent {
     this.casillas = Array(9).fill(null);
     this.ganador = null;
     this.turnoDeX = true;
+    this.isGame = true;
   }
 
   getPlayer = () => {
@@ -27,7 +29,7 @@ export class TableroComponent {
   }
 
   jugarTurno = (id: number) => {
-    if (!this.casillas[id]) {
+    if (!this.casillas[id] && this.isGame) {
       this.casillas.splice(id, 1, this.getPlayer())
       this.turnoDeX = !this.turnoDeX;
     }
@@ -54,6 +56,7 @@ export class TableroComponent {
         this.casillas[a] === this.casillas[c]
       ) {
         ganador = this.casillas[a]
+        this.isGame = false;
       }
     })
     return ganador

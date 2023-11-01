@@ -1,0 +1,22 @@
+main {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 0px;
+}
+
+button {
+    margin-bottom: 1%;
+    border-radius: 15%;
+    height: 5%;
+    background-color: #041f1e;
+    color: #fafafa;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+}
+
+app-casilla {
+    border: 1px #6d597a solid;
+    height: 200px;
+
+}
+

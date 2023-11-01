@@ -1,6 +1,8 @@
-<h1>Turno de: {{this.getPlayer()}}</h1>
+<h1>Tres en raya</h1>
 
 <button (click)="newGame()">Nuevo juego</button>
+
+<h1 *ngIf="isGame">Turno de: {{this.getPlayer()}}</h1>
 
 <h2 *ngIf="ganador">
     {{ ganador }} ha ganado la partida!
